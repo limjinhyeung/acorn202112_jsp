@@ -24,23 +24,33 @@ public class FortuneServlet extends HttpServlet{
 		list.add("뜻밖의 횡제를 해요");
 		list.add("물건을 잃어버릴지도 몰라요 조심해요");
 		
-		Random a = new Random();
-		int b = a.nextInt(5);
-		String c=list.get(b);
+		//응답 인코딩 설정
 		resp.setCharacterEncoding("utf-8");
+		//응답 컨텐트 type 설정(웹브라우저에게 html 형식의 문자열을 응답할 예정이라고 알리고)
 		resp.setContentType("text/html; charset=utf-8");
-
+		//html 형식의 문자열 응답하기
 		PrintWriter pw = resp.getWriter();
 		pw.println("<!doctype html>");
 		pw.println("<html>");
 		pw.println("<head>");
 		pw.println("<meta charset='utf-8'>");
-		pw.println("<title></title>");
+		pw.println("<title>오늘의 운세 페이지</title>");
 		pw.println("</head>");
 		pw.println("<body>");
-		pw.println("<p>오늘의 운세:  "+c+"</p>");
+		//0~4 사이의 랜덤한 정수 얻어내기 
+		Random ran=new Random();
+		int ranNum=ran.nextInt(5);
+		
+		pw.println("<p>오늘의 운세:"+list.get(ranNum)+"</p>");
 		pw.println("</body>");
 		pw.println("</html>");
 		pw.close();
+		
 	}
 }
+
+
+
+
+
+
