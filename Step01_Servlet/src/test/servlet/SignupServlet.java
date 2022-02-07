@@ -31,9 +31,11 @@ public class SignupServlet extends HttpServlet{
 			System.out.println("성별은 여자입니다.");
 		}
 		//hobby
-		System.out.print("취미는 : ");
-		for(String tmp:hobby) {
-			System.out.print(tmp + " ");
+		if(hobby!=null) {
+			System.out.print("취미는 : ");
+			for(String tmp:hobby) {
+				System.out.print(tmp + " ");
+			}
 		}
 		System.out.println();
 		//job
