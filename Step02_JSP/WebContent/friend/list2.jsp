@@ -14,25 +14,20 @@
 <head>
 <meta charset="UTF-8">
 <title>친구목록 Dto</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
 	<div class="container">
-		<table>
+		<table class="table">
 			<thead>
-				<tr>
+				<tr class="table-primary">
 					<th>번호</th>
 					<th>이름</th>
 					<th>주소</th>
 				</tr>
 			</thead>
 			<tbody>
-				<%for(int i=0;i<list.size();i++){%>
-					<tr>
-						<td><%=list.get(i).getNum() %></td>
-						<td><%=list.get(i).getName() %></td>
-						<td><%=list.get(i).getAddr() %></td>
-					</tr>
-				<%} %>
 				<%for(MemberDto tmp:list){%>
 					<tr>
 						<td><%=tmp.getNum() %></td>
