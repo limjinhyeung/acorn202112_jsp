@@ -15,7 +15,6 @@
 	<p>오늘의 운세 : <%=fortuneToday %></p>
 	<%for(int i=0;i<10;i++){ %>
 		<p>Hello</p>
-		<p><%= i %></p>
-	<%} %>
+	<%}%>
 </body>
 </html>
