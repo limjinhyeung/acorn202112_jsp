@@ -4,15 +4,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>index.jsp</title>
+<title>member/list.jsp</title>
 </head>
 <body>
 	<div class="container">
-		<h1>인덱스페이지 입니다.</h1>
-		<ul>
-			<li><a href="test.jsp">DB 연결 테스트</a></li>
-			<li><a href="member/list.jsp">회원목록 조회</a></li>
-		</ul>
+		<table>
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>이름</th>
+					<th>주소</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
 	</div>
 </body>
 </html>
