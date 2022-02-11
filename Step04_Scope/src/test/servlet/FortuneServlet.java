@@ -30,7 +30,7 @@ public class FortuneServlet extends	HttpServlet {
 		 * 메소드를 이용해서 얻어낼수 있다. 
 		 */
 		
-		//경로설정? 느낌
+		//경로설정? 느낌 jsp랑 연결을 해서 응답을 할수있게 보내는것이라 생각하면 된다. 
 		RequestDispatcher rd=req.getRequestDispatcher("/test/fortune.jsp");
 		//지정된 jsp페이지로 응답을 위임시킨다. 
 		rd.forward(req, resp);
