@@ -12,5 +12,6 @@
 		String fortuneToday=(String)request.getAttribute("fortuneToday");
 	%>
 	<p>오늘의 운세 : <strong><%=fortuneToday %></strong></p>
+	<a href="test/fortune.jsp">사라졌나?</a>
 </body>
 </html>
