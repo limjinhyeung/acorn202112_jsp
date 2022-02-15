@@ -20,8 +20,14 @@
 <title>users/private/update.jsp</title>
 </head>
 <body>
-	<script>
-		
-	</script>
+<script>
+	<%if(isSuccess){%>
+		alert("수정 했습니다.");
+		location.href="info.jsp";
+	<%}else{%>
+		alert("수정실패");
+		location.href="updateform.jsp";
+	<%}%>
+</script>	
 </body>
 </html>
