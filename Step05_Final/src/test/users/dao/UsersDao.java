@@ -25,6 +25,38 @@ public class UsersDao {
 	// new UsersDao 가 아니라 UsersDao.getinstance(); 로 받아가라
 	// 그러면 dao는 하나만 만들어진다. 객체가
 	
+	//인자로 전달된 아이디에 해당하는 가입정보를 삭제하는 메소드
+	   public boolean delete(String id) {
+	      Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      int flag = 0;
+	      try {
+	         conn = new DbcpBean().getConn();
+	         //실행할 insert, update, delete 문 구성
+	         String sql = "DELETE FROM users"
+	               + " WHERE id=?";
+	         pstmt = conn.prepareStatement(sql);
+	         //? 에 바인딩할 내용이 있으면 바인딩한다.
+	         pstmt.setString(1, id);
+	         flag = pstmt.executeUpdate(); //sql 문 실행하고 변화된 row 갯수 리턴 받기
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         try {
+	            if (pstmt != null)
+	               pstmt.close();
+	            if (conn != null)
+	               conn.close();
+	         } catch (Exception e) {
+	         }
+	      }
+	      if (flag > 0) {
+	         return true;
+	      } else {
+	         return false;
+	      }
+	   }
+	
 	//회원 가입 정보를 수정반영하는 메소드
 	   public boolean update(UsersDto dto) {
 	      Connection conn = null;

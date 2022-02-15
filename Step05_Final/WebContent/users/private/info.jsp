@@ -36,7 +36,18 @@
 			</tr>
 		</table>
 		<a href="updateform.jsp">개인정보수정</a>
-		<a href="delete.jsp">탈퇴</a>
+		<a href="javascript:deleteConfirm()">탈퇴</a> 
+		<%--자바스크립트 링크로 넘어가게 누르면 delete.jsp로 들어간다 확인 누르면 true 아니면 false 값을 가지고 
+			같이 넘어간다.
+		--%>
 	</div>
+<script> 
+	function deleteConfirm(){
+		let isDelete=confirm("확인을 누르면 회원 탈퇴가 됩니다. 탈퇴 하시겠습니까?");
+		is(isDelete){
+			location.herf="delete.jsp";
+		}
+	}
+</script>
 </body>
 </html>
