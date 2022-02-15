@@ -1,3 +1,4 @@
+<%@page import="test.users.dao.UsersDao"%>
 <%@page import="test.users.dto.UsersDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -9,7 +10,7 @@
 	dto.setId(id);
 	dto.setEmail(email);
 	//2. Db에 반영하고 
-	
+	boolean isSuccess=UsersDao.getInstance().update(dto);
 	//3. 응답하기
 %>
 <!DOCTYPE html>
@@ -19,6 +20,8 @@
 <title>users/private/update.jsp</title>
 </head>
 <body>
-
+	<script>
+		
+	</script>
 </body>
 </html>
