@@ -25,6 +25,39 @@ public class UsersDao {
 	// new UsersDao 가 아니라 UsersDao.getinstance(); 로 받아가라
 	// 그러면 dao는 하나만 만들어진다. 객체가
 
+	public boolean updatePwd(UsersDto dto) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int flag = 0;
+		try {
+			conn = new DbcpBean().getConn();
+			String sql = "update users"
+					+ " set pwd=?"
+					+ " where id=? and pwd=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getNewPwd());
+			pstmt.setNString(2, dto.getId());
+			pstmt.setNString(3, dto.getPwd());
+			flag = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+			}
+		}
+		if (flag > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	// 인자로 전달된 아이디에 해당하는 가입정보를 리턴해주는 메소드
 	public UsersDto getData(String id) {
 		// 회원 정보를 담을 UsersDto
