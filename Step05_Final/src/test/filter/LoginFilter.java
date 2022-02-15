@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
  *   2.어떤 용청에 대해 필터링한것인지 맵핑한다.
  */
 
-@WebFilter({"/private/*","/users/private/*"})/*private 하위에 모든 요청에 대해서 이다. [*] 사용가능 나열하고싶을때는 {}로 감싸고 ,로 나눠준다.*/
+@WebFilter({"/private/*","/users/private/*","/cafe/private/*"})/*private 하위에 모든 요청에 대해서 이다. [*] 사용가능 나열하고싶을때는 {}로 감싸고 ,로 나눠준다.*/
 public class LoginFilter implements Filter{
 //실행순서를 중간에 가로채는 느낌~ webfilter의 경로안에 있는 모든것도 선택할수있고 
 	@Override
