@@ -14,7 +14,7 @@
 	if(!f.exists()){ //만일  폴더가 존재 하지 않으면
 		f.mkdir(); //upload 폴더 만들기 
 	}
-	
+	 
 	//최대 업로드 사이즈 설정
 	int sizeLimit=1024*1024*50; // 50 MByte
 	/*
