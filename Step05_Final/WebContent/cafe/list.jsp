@@ -95,10 +95,10 @@
 <head>
 <meta charset="UTF-8">
 <title>/cafe/list.jsp</title>
-<jsp:include page="../include/resource.jsp"></jsp:include>
+<jsp:include page="/include/resource.jsp"></jsp:include>
 </head>
 <body>
-<jsp:include page="../include/navbar.jsp">
+<jsp:include page="/include/navbar.jsp">
 	<jsp:param value="cafe" name="thisPage"/>
 </jsp:include>
 <div class="container">

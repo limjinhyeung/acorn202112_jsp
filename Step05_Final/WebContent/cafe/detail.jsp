@@ -16,10 +16,10 @@
 <head>
 <meta charset="UTF-8">
 <title>/cafe/detail.jsp</title>
-<jsp:include page="../include/resource.jsp"></jsp:include>
+<jsp:include page="/include/resource.jsp"></jsp:include>
 </head>
 <body>
-<jsp:include page="../include/navbar.jsp">
+<jsp:include page="/include/navbar.jsp">
 	<jsp:param value="cafe" name="thisPage"/>
 </jsp:include>
 <div class="container">
@@ -61,6 +61,12 @@
 			</td>
 		</tr>
 	</table>
+	<%if(dto.getPrevNum() != 0){ %>
+		<a href="detail.jsp?num=<%=dto.getPrevNum()%>">이전</a>
+	<%} %>
+	<%if(dto.getNextNum() != 0){ %>
+	<a href="detail.jsp?num=<%=dto.getNextNum()%>">다음</a>
+	<%} %>
 	<%
 		//session scope 에서 로그인된 아이디를 읽어와 본다. ( null 일수도 있음 )
 		String id=(String)session.getAttribute("id");
