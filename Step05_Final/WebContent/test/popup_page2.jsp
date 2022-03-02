@@ -21,8 +21,26 @@
 	</label>
 	<button type="submit">닫기</button>
 </form>
+<br />
+<input type="text" id="msg" placeholder="부모창에 전달할 문자열 입력..."/>
+<button id="sendBtn">전달</button>
+<script>
+	document.querySelector("#sendBtn").addEventListener("click", function(){
+		//입력한 문자열을 읽어와서 
+		let msg=document.querySelector("#msg").value;
+		//부모창의 javascript 함수를 호출하면서 전달한다.
+		window.opener.sendMsg(msg);
+	});
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 

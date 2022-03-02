@@ -27,6 +27,7 @@
 	*/
 	String path=application.getRealPath("/upload")+
 		File.separator+dto.getSaveFileName(); 
+
 	//삭제할 파일을 access 할수 있는 File 객체 생성
 	File file=new File(path);
 	if(file.exists()){

@@ -30,7 +30,7 @@
 <title>/test/cookie_form3.jsp</title>
 </head>
 <body>
-<form action="login.jsp" method="post">
+<form action="login.jsp" method="post" >
 	<table>
 		<tr>
 			<th><label for="id">아이디</label></th>
